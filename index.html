@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Quiz App</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Smart Quiz</h1>
+      <div id="auth-actions">
+        <span id="welcome-msg"></span>
+        <button id="logout-btn" class="muted hidden">Logout</button>
+      </div>
+    </header>
+
+    <!-- AUTH SECTION -->
+    <section id="auth-section" class="card">
+      <div class="tabs">
+        <button id="tab-login" class="active">Login</button>
+        <button id="tab-register">Register</button>
+      </div>
+
+      <!-- Login Form -->
+      <div id="login-form" class="form">
+        <label>Email</label>
+        <input type="email" id="login-email" placeholder="Enter your email">
+        <label>Password</label>
+        <input type="password" id="login-password" placeholder="Enter password">
+        <button id="btn-login" class="primary">Login</button>
+      </div>
+
+      <!-- Register Form -->
+      <div id="register-form" class="form hidden">
+        <label>Name</label>
+        <input type="text" id="reg-name" placeholder="Your name">
+        <label>Email</label>
+        <input type="email" id="reg-email" placeholder="Your email">
+        <label>Password</label>
+        <input type="password" id="reg-password" placeholder="Create password">
+        <label>Level</label>
+        <select id="reg-level">
+          <option value="school">School</option>
+          <option value="college">College</option>
+          <option value="office">Office</option>
+        </select>
+        <button id="btn-register" class="primary">Register</button>
+      </div>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="card hidden">
+      <h2>Welcome, <span id="user-name"></span> 🎉</h2>
+      <p>Level: <strong id="user-level"></strong></p>
+      <div class="controls">
+        <label>Select Quiz Level:</label>
+        <select id="quiz-level-select">
+          <option value="school">School</option>
+          <option value="college">College</option>
+          <option value="office">Office</option>
+        </select>
+        <button id="start-quiz" class="primary">Start Quiz</button>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section id="quiz-section" class="card hidden">
+      <div class="quiz-header">
+        <h2>Question <span id="q-index">1</span>/<span id="q-total"></span></h2>
+      </div>
+      <div id="question-text"></div>
+      <div id="answers"></div>
+      <div class="quiz-footer">
+        <button id="prev-btn" class="muted">Previous</button>
+        <button id="next-btn" class="primary">Next</button>
+        <button id="submit-quiz" class="primary hidden">Submit</button>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="result-section" class="card hidden">
+      <h2>Quiz Completed ✅</h2>
+      <p id="score-text"></p>
+      <div id="result-details"></div>
+      <button id="retake-btn" class="primary">Retake Quiz</button>
+      <button id="back-dash" class="muted">Back to Dashboard</button>
+    </section>
+
+    <footer>© 2025 Smart Quiz App</footer>
+  </div>
+
+  <script src="js/question.js"></script>
+  <script src="js/apps.js"></script>
+</body>
+</html>
